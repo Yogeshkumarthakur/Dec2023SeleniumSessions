@@ -1,0 +1,39 @@
+package SeleniumSessions;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class DisabledElementClickSendKeys {
+
+	static WebDriver driver;
+
+	public static void main(String[] args) {
+
+		driver = new ChromeDriver();
+		
+//		driver.get("https://classic.crmpro.com/register/");
+//		driver.findElement(By.id("submitButton")).click();//ElementClickInterceptedException: button> is not clickable at point
+		
+		//mukesh site
+		driver.get("https://seleniumpractise.blogspot.com/2016/09/how-to-work-with-disable-textbox-or.html");
+//		driver.findElement(By.id("pass")).click(); // no exception
+//		driver.findElement(By.id("pass")).sendKeys("testing");// ElementNotInteractableException
+	
+	
+		//driver.findElement(By.id("fname")).sendKeys(null);
+		//IllegalArgumentException:Keys to send should be a not null CharSequence 
+		//becoz we are passing null deliberately without ""
+		
+		
+		
+		//CharSequence is an interface in java and there are 3 child classes of Char Sequence 
+		// They are -- String , String builder, String buffer
+		
+		StringBuilder sb= new StringBuilder("Testing");
+		String s = "automation";
+		//driver.findElement(By.id("fname")).sendKeys(sb + s);
+		driver.findElement(By.id("fname")).sendKeys(sb, s, "naveen");
+
+	}
+}
